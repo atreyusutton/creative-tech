@@ -28,7 +28,7 @@ export default function TechnologyTinderExample() {
             Technology Tinder
           </h1>
           <p className="text-xl text-gray-300 mb-8">
-            Which technologies make humans more capable — and which make us less so?
+            Which technologies make humans more capable and which make us less so?
           </p>
           
 
@@ -218,8 +218,8 @@ export default function TechnologyTinderExample() {
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
                 <h3 className="font-semibold text-purple-400 mb-2">Opening (0:00-0:20)</h3>
                 <p className="leading-relaxed">
-                  &quot;Technology should give people power, not take it. I swiped right on Arduino—a tool that puts 
-                  creation in your hands. I swiped left on TikTok—a platform designed to hijack your attention. 
+                  &quot;Technology should give people power, not take it. I swiped right on Arduino, a tool that puts 
+                  creation in your hands. I swiped left on TikTok, a platform designed to hijack your attention. 
                   The difference is simple: <strong>tools versus traps</strong>.&quot;
                 </p>
               </div>
@@ -231,12 +231,12 @@ export default function TechnologyTinderExample() {
                   free software and massive community support.&quot;
                 </p>
                 <p className="leading-relaxed mb-3">
-                  &quot;I value it because it puts power directly in people&apos;s hands—not just trained engineers. I learned 
+                  &quot;I value it because it puts power directly in people&apos;s hands, not just trained engineers. I learned 
                   to code making small games. This is the hardware version. No gatekeeping, just curiosity and a $70 kit."
                 </p>
                 <p className="leading-relaxed mb-3">
                   &quot;It enables <strong>learning by making</strong>. Watch a YouTube, plug it in, start building. Artists, 
-                  students, tinkerers like me—we solve real problems. It shifts power from consumers to creators.&quot;
+                  students, tinkerers like me, we solve real problems. It shifts power from consumers to creators.&quot;
                 </p>
                 <p className="leading-relaxed">
                   &quot;I believe tech should be transparent and modifiable, not locked down. Arduino says &apos;here&apos;s how it 
@@ -247,12 +247,12 @@ export default function TechnologyTinderExample() {
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
                 <h3 className="font-semibold text-red-400 mb-2">TikTok - Left Swipe (1:30-2:40)</h3>
                 <p className="leading-relaxed mb-3">
-                  &quot;TikTok uses infinite scroll—no natural stopping points. Autoplay keeps you watching. The algorithm 
+                  &quot;TikTok uses infinite scroll, no natural stopping points. Autoplay keeps you watching. The algorithm 
                   keeps you on the platform longest, not what serves you best.&quot;
                 </p>
                 <p className="leading-relaxed mb-3">
                   &quot;I&apos;ve never had TikTok, but I&apos;ve lost days to Instagram, Facebook, YouTube Shorts. You open it to 
-                  check one thing, an hour later you&apos;ve watched hundreds of videos. It&apos;s not weakness—it&apos;s designed 
+                  check one thing, an hour later you&apos;ve watched hundreds of videos. It&apos;s not weakness, it&apos;s designed 
                   to be addictive by teams of engineers.&quot;
                 </p>
                 <p className="leading-relaxed mb-3">
@@ -261,7 +261,7 @@ export default function TechnologyTinderExample() {
                   agency with compulsion.&quot;
                 </p>
                 <p className="leading-relaxed">
-                  &quot;This treats attention as infinite and extractable. It&apos;s not serving human needs—it&apos;s shaping behavior 
+                  &quot;This treats attention as infinite and extractable. It&apos;s not serving human needs, it&apos;s shaping behavior 
                   for profit. I want to build tech that respects people&apos;s time and agency, not exploits it.&quot;
                 </p>
               </div>
