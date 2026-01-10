@@ -38,10 +38,10 @@ export default function TechnologyTinderExample() {
               My Position
             </h2>
             <p className="text-gray-300 leading-relaxed text-lg">
-              I believe technology should give people power, not take it away. Arduino represents tools that empower—
-              transparent, accessible, and designed to amplify human capability. TikTok represents platforms that 
-              exploit—designed to hijack attention and optimize for engagement over agency. The line is clear: 
-              <strong>tools versus traps</strong>.
+              Technology should give people power not take it. I don&apos;t know first hand yet but I&apos;m thinking Arduino 
+              represents a tool that can give you power and creativity. Help amplify human ability and design. TikTok 
+              on the other hand does the opposite. TikTok exploits people attention and creativity optimizing for 
+              engagement over autonomy. We can sum it up to a <strong>tool versus a trap</strong>.
             </p>
           </div>
 
@@ -58,7 +58,7 @@ export default function TechnologyTinderExample() {
             </div>
 
             <h3 className="text-2xl font-bold text-white mb-4">
-              Open-Source Hardware (Arduino, Raspberry Pi)
+              Open-Source Hardware (Arduino)
             </h3>
 
             {/* Arduino Image */}
@@ -69,7 +69,7 @@ export default function TechnologyTinderExample() {
                 className="w-full rounded-xl shadow-2xl border border-white/10"
               />
               <p className="mt-3 text-gray-400 text-sm">
-                Arduino and open-source hardware platforms that democratize technology creation
+                Arduino and open-source hardware platforms that enable technology creation
               </p>
             </div>
 
@@ -77,39 +77,39 @@ export default function TechnologyTinderExample() {
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
                 <h4 className="font-semibold text-green-400 mb-2">What it is</h4>
                 <p>
-                  Open-source hardware platforms like Arduino and Raspberry Pi are affordable, accessible 
-                  computing boards that anyone can use to build physical interactive devices. They come with 
-                  open schematics, free development tools, and massive community support.
+                  Open source hardware platforms like Arduino are pretty damn cheap micro computers that anyone can 
+                  use to build physical interactive projects and devices. They come with their own software, free 
+                  development tools, and a ton of community support.
                 </p>
               </div>
 
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
                 <h4 className="font-semibold text-green-400 mb-2">Why I value it</h4>
                 <p>
-                  These platforms democratize technology creation. They put the power to build, modify, and 
-                  understand technology directly in anyone's hands—not just engineers at big companies. I learned 
-                  to code by making LEDs blink with Arduino. No gatekeeping, no expensive tools, just curiosity 
-                  and a $25 board.
+                  These platforms fully enable technology creation. They put the power to build, modify, and 
+                  understand technology directly in anyone's hands not just formally trained and career engineers 
+                  at big companies. I learned to code by making small games and this is the hardware version of that. 
+                  No gatekeeping, not expensive, just curiosity a bit of creativity and a $70 kit.
                 </p>
               </div>
 
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
                 <h4 className="font-semibold text-green-400 mb-2">What it enables</h4>
                 <p>
-                  It enables <strong>learning by making</strong>. You don't need permission or credentials—just 
-                  plug it in and start experimenting. It enables artists to add interactivity, students to understand 
-                  how devices work by building them, and tinkerers to solve real problems in their own communities. 
-                  It shifts power from consumers to creators.
+                  It&apos;s awesome because it enables <strong>learning by making</strong>. You don&apos;t need special permission, 
+                  just watch a YouTube and plug it in and start experimenting. From artists to students you can use this 
+                  to understand how devices work by building them, and tinkerers like myself love to solve real problems 
+                  in their own lives and communities. It shifts power from consumers to creators.
                 </p>
               </div>
 
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
                 <h4 className="font-semibold text-green-400 mb-2">Why it matters to me</h4>
                 <p>
-                  I believe technology should be transparent and modifiable, not black-boxed and locked down. 
+                  I believe technology should be transparent and modifiable, not black-boxed and locked down on all sides. 
                   Open-source hardware embodies the idea that understanding how things work is a form of empowerment. 
-                  It's the opposite of "just trust us"—it's "here's how it works, now make it your own." That's the 
-                  kind of technology I want to spend my time building and advocating for.
+                  It&apos;s the opposite of &quot;just trust us&quot; it&apos;s &quot;here&apos;s how it works, now make it your own.&quot; That's the 
+                  kind of technology and creative control I want to spend my time building and advocating for.
                 </p>
               </div>
             </div>
@@ -147,19 +147,20 @@ export default function TechnologyTinderExample() {
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
                 <h4 className="font-semibold text-red-400 mb-2">What it is</h4>
                 <p>
-                  TikTok is a short-form video platform engineered to maximize engagement through algorithmic content delivery. 
-                  The infinite scroll removes natural stopping points. Autoplay keeps you watching. The "For You" algorithm 
-                  predicts what will keep you on the platform longest, not what serves you best.
+                  We all know what TikTok is. The infinite scroll they use removes all natural stopping points. Their autoplay 
+                  feature keeps you watching. The &quot;For You&quot; algorithm predicts what will keep you on the platform longest, 
+                  not what serves you best.
                 </p>
               </div>
 
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
                 <h4 className="font-semibold text-red-400 mb-2">Why I reject it</h4>
                 <p>
-                  Because it hijacks human attention and intention. I've personally lost hours to TikTok—
-                  opened the app to check one thing, then suddenly it's 45 minutes later and I've watched 
-                  hundreds of videos I didn't mean to see. It's not that I'm weak-willed; TikTok is 
-                  explicitly designed by teams of engineers to be hard to resist.
+                  It hijacks human attention and intention! I've fortunately never never had TikTok but personally 
+                  lost days to Instagram, Facebook, and worst of all YouTube shorts you open the app to check one 
+                  thing, then suddenly it's an hour later and I've watched hundreds of videos I didn't mean to see. 
+                  It's not that I'm weak-willed it's designed to do that. TikTok is explicitly designed by teams of 
+                  engineers to be hard to resist and addictive.
                 </p>
               </div>
 
@@ -167,18 +168,18 @@ export default function TechnologyTinderExample() {
                 <h4 className="font-semibold text-red-400 mb-2">What it disables</h4>
                 <p>
                   It disables <strong>intentional choice</strong>. When algorithms decide what you see next, 
-                  you're not navigating—you're being guided. It erodes the ability to decide "I'm done now" 
-                  because there's always one more thing. It replaces human agency with automated compulsion. 
-                  You become a resource to optimize, not a person with goals.
+                  you&apos;re not navigating you&apos;re just being guided. It disables the ability to decide I&apos;m done now 
+                  because there&apos;s always one more thing you want to see. It replaces human agency and self governance 
+                  with automated compulsion.
                 </p>
               </div>
 
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
                 <h4 className="font-semibold text-red-400 mb-2">Why it concerns me</h4>
                 <p>
-                  I'm concerned because this optimization treats human attention as infinite and extractable. 
-                  It's technology designed not to serve human needs, but to shape human behavior for platform 
-                  benefit. If I'm going to build technology, I want to build things that respect people's time 
+                  I&apos;m concerned because this optimization treats human attention as infinite and extractable. 
+                  It&apos;s technology designed not to serve human needs, but to shape human behavior for the company&apos;s 
+                  benefit. If I&apos;m going to build technology, I want to build things that respect people&apos;s time 
                   and agency, not exploit it. I want tools, not traps.
                 </p>
               </div>
@@ -192,18 +193,18 @@ export default function TechnologyTinderExample() {
             </h2>
             <div className="text-gray-300 leading-relaxed space-y-4">
               <p>
-                Arduino and TikTok represent opposite visions of what technology can be. One democratizes creation 
+                Arduino and TikTok represent opposite visions of what technology can be. One emphasizes creation 
                 and puts power in people's hands. The other optimizes for engagement and treats users as metrics 
-                to extract from.
+                to pull time from.
               </p>
               <p>
-                I value <strong>transparency over black boxes</strong>, <strong>agency over convenience</strong>, 
+                I value <strong>transparency over black boxes</strong>, <strong>intention over convenience</strong>, 
                 and <strong>empowerment over exploitation</strong>. The technologies I want to build are tools you 
-                can understand, modify, and control—not platforms that control you.
+                can understand, modify, and control, not platforms that control you.
               </p>
               <p>
-                That's the foundation: <strong>tools, not traps</strong>. Technology that respects human intention, 
-                not technology that hijacks it.
+                I want <strong>tools, not traps</strong>. Technology that respects human intention, not technology 
+                that hijacks it.
               </p>
             </div>
           </div>
@@ -211,42 +212,67 @@ export default function TechnologyTinderExample() {
           {/* Presentation Notes */}
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-white mb-4">
-              My Presentation Language
+              My Presentation Notes
             </h2>
             <div className="space-y-4 text-gray-300">
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
-                <p className="text-lg leading-relaxed">
-                  "I swiped right on Arduino and open-source hardware, and left on TikTok. 
-                  These choices show what I value: <strong>tools that give you power versus platforms that take it away</strong>."
+                <h3 className="font-semibold text-purple-400 mb-2">Opening (0:00-0:20)</h3>
+                <p className="leading-relaxed">
+                  &quot;Technology should give people power, not take it. I swiped right on Arduino—a tool that puts 
+                  creation in your hands. I swiped left on TikTok—a platform designed to hijack your attention. 
+                  The difference is simple: <strong>tools versus traps</strong>.&quot;
                 </p>
               </div>
               
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
-                <h3 className="font-semibold text-green-400 mb-2">On Arduino (Right Swipe):</h3>
+                <h3 className="font-semibold text-green-400 mb-2">Arduino - Right Swipe (0:20-1:30)</h3>
+                <p className="leading-relaxed mb-3">
+                  &quot;Arduino is a cheap microcomputer that anyone can use to build interactive devices. It comes with 
+                  free software and massive community support.&quot;
+                </p>
+                <p className="leading-relaxed mb-3">
+                  &quot;I value it because it puts power directly in people&apos;s hands—not just trained engineers. I learned 
+                  to code making small games. This is the hardware version. No gatekeeping, just curiosity and a $70 kit."
+                </p>
+                <p className="leading-relaxed mb-3">
+                  &quot;It enables <strong>learning by making</strong>. Watch a YouTube, plug it in, start building. Artists, 
+                  students, tinkerers like me—we solve real problems. It shifts power from consumers to creators.&quot;
+                </p>
                 <p className="leading-relaxed">
-                  "Arduino puts creation in anyone's hands. You don't need permission, you don't need credentials—
-                  just curiosity and a $25 board. I learned to code by making LEDs blink. That's what I want 
-                  technology to be: <strong>transparent, accessible, empowering</strong>. Not locked behind paywalls 
-                  or corporate gatekeeping."
+                  &quot;I believe tech should be transparent and modifiable, not locked down. Arduino says &apos;here&apos;s how it 
+                  works, make it your own.&apos; That&apos;s the technology I want to build.&quot;
                 </p>
               </div>
 
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
-                <h3 className="font-semibold text-red-400 mb-2">On TikTok (Left Swipe):</h3>
+                <h3 className="font-semibold text-red-400 mb-2">TikTok - Left Swipe (1:30-2:40)</h3>
+                <p className="leading-relaxed mb-3">
+                  &quot;TikTok uses infinite scroll—no natural stopping points. Autoplay keeps you watching. The algorithm 
+                  keeps you on the platform longest, not what serves you best.&quot;
+                </p>
+                <p className="leading-relaxed mb-3">
+                  &quot;I&apos;ve never had TikTok, but I&apos;ve lost days to Instagram, Facebook, YouTube Shorts. You open it to 
+                  check one thing, an hour later you&apos;ve watched hundreds of videos. It&apos;s not weakness—it&apos;s designed 
+                  to be addictive by teams of engineers.&quot;
+                </p>
+                <p className="leading-relaxed mb-3">
+                  &quot;It disables <strong>intentional choice</strong>. The algorithm decides what you see. You&apos;re not 
+                  navigating, you&apos;re being guided. You can&apos;t say &apos;I&apos;m done&apos; because there&apos;s always one more. It replaces 
+                  agency with compulsion.&quot;
+                </p>
                 <p className="leading-relaxed">
-                  "TikTok is designed to hijack your attention. I've opened it to check one thing and lost 45 minutes 
-                  to videos I didn't choose to watch. The algorithm decides what I see. I'm not navigating—I'm being 
-                  <strong>guided, manipulated, optimized</strong>. That's not a tool, that's a trap."
+                  &quot;This treats attention as infinite and extractable. It&apos;s not serving human needs—it&apos;s shaping behavior 
+                  for profit. I want to build tech that respects people&apos;s time and agency, not exploits it.&quot;
                 </p>
               </div>
 
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
-                <h3 className="font-semibold text-purple-400 mb-2">What This Means:</h3>
+                <h3 className="font-semibold text-purple-400 mb-2">Closing (2:40-3:00)</h3>
                 <p className="leading-relaxed">
-                  "If I'm going to build technology, I want to build things that respect people's agency. 
-                  Things you can understand, modify, and control. <strong>Tools, not traps.</strong> Arduino shows 
-                  what's possible when technology empowers. TikTok shows what happens when it exploits. I know which 
-                  side I want to be on."
+                  &quot;Arduino and TikTok are opposite visions. One puts power in your hands. The other treats you as a 
+                  metric to extract from. I value transparency over black boxes, intention over convenience, empowerment 
+                  over exploitation. <strong>Tools, not traps.</strong> That&apos;s the technology I want to spend my time 
+                  building.&quot;
                 </p>
               </div>
             </div>
