@@ -16,40 +16,12 @@ const projectsData: Record<string, {
     color: "from-purple-500 to-pink-500",
     sections: [
       {
-        heading: "Assignment Overview",
-        content: "Design and prototype an interactive object that addresses a personal pet peeve (PPP). The object must incorporate an Arduino (microcontroller), circuit, and code. It should function both technically and aesthetically—as much storytelling as technical implementation. Due: Project 3/5/26, Ideation 1/29/26."
+        heading: "The Challenge",
+        content: "Design and prototype an interactive object that addresses a personal pet peeve. Must incorporate Arduino, circuit, and code. It should function both technically and aesthetically—as much storytelling as technical implementation. Due: Project 3/5/26"
       },
       {
-        heading: "My Three Pet Peeve Ideas",
-        content: "Below are three concepts I'm considering. Each addresses a personal frustration with a creative interactive solution that combines physical computing and expressive behavior."
-      },
-      {
-        heading: "Idea 1: Passive-Aggressive Alarm Clock (CHOSEN)",
-        content: "Peeve: Snoozing too much. Object: An alarm that gets increasingly judgmental with each snooze press. Tech: Arduino Uno, 1602 LCD display, tactile buttons, active buzzer. Story: The alarm knows you're lying to yourself. First snooze: 'Okay, five more minutes.' Fifth snooze: 'We both know this won't help.' The tone escalates from gentle reminder to existential judgment, making the user confront their relationship with morning discipline."
-      },
-      {
-        heading: "Idea 2: Dish Sink Guilt Totem",
-        content: "Peeve: Dishes piling up in the sink. Object: A countertop object that grows angrier over time as dishes accumulate. Tech: Weight sensor detects dish pile, RGB LED changes from calm blue to aggressive red. Story: Domestic accountability with personality. The totem sits near the sink and its mood deteriorates as the weight increases. It's a physical manifestation of household guilt, making invisible neglect visible and emotional."
-      },
-      {
-        heading: "Idea 3: The Coffee Mug That Knows You Forgot",
-        content: "Peeve: Forgetting about your coffee until it's cold. Object: A smart mug coaster that reacts as your coffee temperature drops. Tech: Temperature sensor monitors heat loss, LED ring fades from warm orange to cold blue. Story: Time passing made visible. The coaster tracks your coffee's descent from perfect to undrinkable, creating ambient awareness of the window you're missing. It's a quiet reminder that some moments have expiration dates."
-      },
-      {
-        heading: "Chosen Project: Technical Implementation",
-        content: "I'm going with the Passive-Aggressive Alarm Clock. This project combines embedded hardware, physical interaction, and state-driven software logic to create an expressive interactive object that responds to user behavior over time."
-      },
-      {
-        heading: "Core Hardware Stack",
-        content: "Microcontroller: Arduino Uno acts as the central controller, handling timing logic, state transitions, input reading, and output coordination. Display: 1602 Character LCD (Parallel, 4-bit mode) displays system time, alarm state, and escalating passive-aggressive messages using the LiquidCrystal library. Contrast controlled via hardware potentiometer for stable readability."
-      },
-      {
-        heading: "Input & Output Components",
-        content: "Input: Two tactile push buttons (Snooze and Stop) configured using INPUT_PULLUP, eliminating need for external resistors. Button presses drive state transitions and behavioral escalation. Output: Active Buzzer provides audible alarm using simple HIGH/LOW digital control. Beep cadence escalates based on user behavior rather than volume, reinforcing the project's emotional tone. Analog Control: 10kΩ Potentiometer adjusts LCD contrast via VO pin, separating display legibility from logic."
-      },
-      {
-        heading: "Why This Approach",
-        content: "The technical choices prioritize expressive behavior over raw functionality. The LCD enables text-based personality, buttons create interaction loops, and the buzzer's escalation pattern (not volume) creates the passive-aggressive character. State-driven logic tracks snooze count and time, allowing the alarm's attitude to evolve based on user behavior. It's a system that develops a relationship with the user through repeated interactions."
+        heading: "Three Pet Peeve Ideas",
+        content: "Each concept addresses a personal frustration with an interactive solution that combines physical computing and expressive behavior."
       }
     ]
   },
@@ -282,24 +254,130 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 <div className="text-gray-300 leading-relaxed space-y-4">
                   <p>{section.content}</p>
                   
-                  {/* Placeholder for media */}
-                  <div className="mt-6 p-8 border-2 border-dashed border-white/20 rounded-lg bg-white/5">
-                    <div className="text-center text-gray-400">
-                      <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      <p className="text-sm">
-                        Add your images, videos, sketches, and diagrams here
-                      </p>
-                      <p className="text-xs mt-2 text-gray-500">
-                        Include descriptions of what, how, and why for each piece of media
-                      </p>
+                  {/* Only show placeholder for non-IDC1 ideation pages */}
+                  {id !== 'idc1-ideation' && (
+                    <div className="mt-6 p-8 border-2 border-dashed border-white/20 rounded-lg bg-white/5">
+                      <div className="text-center text-gray-400">
+                        <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <p className="text-sm">
+                          Add your images, videos, sketches, and diagrams here
+                        </p>
+                        <p className="text-xs mt-2 text-gray-500">
+                          Include descriptions of what, how, and why for each piece of media
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Custom content for IDC1 Ideation */}
+          {id === 'idc1-ideation' && (
+            <>
+              {/* Three Ideas Grid */}
+              <div className="grid md:grid-cols-3 gap-6 mt-8">
+                {/* Idea 1 - Passive-Aggressive Alarm Clock */}
+                <div className="bg-gradient-to-br from-amber-500/10 to-orange-500/10 backdrop-blur-sm border border-amber-500/30 rounded-2xl p-6 hover:border-amber-500/50 transition-all">
+                  <div className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-medium mb-4">
+                    CHOSEN
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">
+                    Passive-Aggressive Alarm Clock
+                  </h3>
+                  <div className="space-y-3 text-gray-300 text-sm">
+                    <p><strong className="text-amber-400">Peeve:</strong> Snoozing too much</p>
+                    <p><strong className="text-amber-400">Object:</strong> Alarm that gets increasingly judgmental with each snooze</p>
+                    <p><strong className="text-amber-400">Tech:</strong> Arduino Uno, LCD display, tactile buttons, buzzer</p>
+                    <p className="text-gray-400 italic">&quot;We both know this won&apos;t help.&quot;</p>
+                  </div>
+                </div>
+
+                {/* Idea 2 - Dish Sink Guilt Totem */}
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all">
+                  <h3 className="text-xl font-bold text-white mb-3">
+                    Dish Sink Guilt Totem
+                  </h3>
+                  <div className="space-y-3 text-gray-300 text-sm">
+                    <p><strong className="text-purple-400">Peeve:</strong> Dishes piling up</p>
+                    <p><strong className="text-purple-400">Object:</strong> Countertop object that grows angrier over time</p>
+                    <p><strong className="text-purple-400">Tech:</strong> Weight sensor, RGB LED</p>
+                    <p className="text-gray-400 italic">Domestic accountability with personality</p>
+                  </div>
+                </div>
+
+                {/* Idea 3 - Coffee Mug */}
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all">
+                  <h3 className="text-xl font-bold text-white mb-3">
+                    The Coffee Mug That Knows You Forgot
+                  </h3>
+                  <div className="space-y-3 text-gray-300 text-sm">
+                    <p><strong className="text-blue-400">Peeve:</strong> Cold coffee</p>
+                    <p><strong className="text-blue-400">Object:</strong> Mug coaster that reacts as coffee cools</p>
+                    <p><strong className="text-blue-400">Tech:</strong> Temperature sensor, LED ring</p>
+                    <p className="text-gray-400 italic">Time passing made visible</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Technical Stack Section */}
+              <div className="mt-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">
+                  Technical Implementation: Passive-Aggressive Alarm Clock
+                </h2>
+                
+                {/* Image 1 */}
+                <div className="mb-8">
+                  <img 
+                    src="/idc1/annoying-alarm.webp" 
+                    alt="Passive-aggressive alarm clock concept"
+                    className="w-full rounded-xl shadow-2xl border border-white/10"
+                  />
+                  <p className="mt-3 text-gray-400 text-sm">
+                    The alarm that judges your life choices, one snooze at a time
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-amber-400">Core Hardware</h3>
+                    <ul className="space-y-2 text-gray-300 text-sm">
+                      <li>• <strong>Arduino Uno</strong> - Central controller for timing logic and state transitions</li>
+                      <li>• <strong>1602 LCD</strong> - Displays escalating passive-aggressive messages</li>
+                      <li>• <strong>Active Buzzer</strong> - Audible alarm with escalating cadence</li>
+                      <li>• <strong>Two Tactile Buttons</strong> - Snooze and Stop controls</li>
+                      <li>• <strong>10kΩ Potentiometer</strong> - LCD contrast adjustment</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-amber-400">Why This Approach</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      The technical choices prioritize expressive behavior over raw functionality. The LCD enables 
+                      text-based personality, buttons create interaction loops, and the buzzer&apos;s escalation pattern 
+                      creates the passive-aggressive character. State-driven logic tracks snooze count, allowing the 
+                      alarm&apos;s attitude to evolve based on user behavior.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Image 2 */}
+                <div>
+                  <img 
+                    src="/idc1/billmurray.png" 
+                    alt="Bill Murray Groundhog Day - the eternal snooze loop"
+                    className="w-full rounded-xl shadow-2xl border border-white/10"
+                  />
+                  <p className="mt-3 text-gray-400 text-sm">
+                    <em>Groundhog Day</em> - A visual metaphor for the eternal snooze loop. The alarm becomes your personal Phil Connors.
+                  </p>
+                </div>
+              </div>
+            </>
+          )}
 
           {/* Guide Section */}
           <div className="mt-12 p-6 bg-purple-500/10 border border-purple-500/20 rounded-2xl">
