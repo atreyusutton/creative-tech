@@ -12,6 +12,49 @@ const projectsData: Record<string, {
 }> = {
   "idc1-ideation": {
     title: "IDC1 Ideation",
+    subtitle: "Independent Design Challenge 1: Solving a Personal Pet Peeve",
+    color: "from-purple-500 to-pink-500",
+    sections: [
+      {
+        heading: "Assignment Overview",
+        content: "Design and prototype an interactive object that addresses a personal pet peeve (PPP). The object must incorporate an Arduino (microcontroller), circuit, and code. It should function both technically and aesthetically—as much storytelling as technical implementation. Due: Project 3/5/26, Ideation 1/29/26."
+      },
+      {
+        heading: "My Three Pet Peeve Ideas",
+        content: "Below are three concepts I'm considering. Each addresses a personal frustration with a creative interactive solution that combines physical computing and expressive behavior."
+      },
+      {
+        heading: "Idea 1: Passive-Aggressive Alarm Clock (CHOSEN)",
+        content: "Peeve: Snoozing too much. Object: An alarm that gets increasingly judgmental with each snooze press. Tech: Arduino Uno, 1602 LCD display, tactile buttons, active buzzer. Story: The alarm knows you're lying to yourself. First snooze: 'Okay, five more minutes.' Fifth snooze: 'We both know this won't help.' The tone escalates from gentle reminder to existential judgment, making the user confront their relationship with morning discipline."
+      },
+      {
+        heading: "Idea 2: Dish Sink Guilt Totem",
+        content: "Peeve: Dishes piling up in the sink. Object: A countertop object that grows angrier over time as dishes accumulate. Tech: Weight sensor detects dish pile, RGB LED changes from calm blue to aggressive red. Story: Domestic accountability with personality. The totem sits near the sink and its mood deteriorates as the weight increases. It's a physical manifestation of household guilt, making invisible neglect visible and emotional."
+      },
+      {
+        heading: "Idea 3: The Coffee Mug That Knows You Forgot",
+        content: "Peeve: Forgetting about your coffee until it's cold. Object: A smart mug coaster that reacts as your coffee temperature drops. Tech: Temperature sensor monitors heat loss, LED ring fades from warm orange to cold blue. Story: Time passing made visible. The coaster tracks your coffee's descent from perfect to undrinkable, creating ambient awareness of the window you're missing. It's a quiet reminder that some moments have expiration dates."
+      },
+      {
+        heading: "Chosen Project: Technical Implementation",
+        content: "I'm going with the Passive-Aggressive Alarm Clock. This project combines embedded hardware, physical interaction, and state-driven software logic to create an expressive interactive object that responds to user behavior over time."
+      },
+      {
+        heading: "Core Hardware Stack",
+        content: "Microcontroller: Arduino Uno acts as the central controller, handling timing logic, state transitions, input reading, and output coordination. Display: 1602 Character LCD (Parallel, 4-bit mode) displays system time, alarm state, and escalating passive-aggressive messages using the LiquidCrystal library. Contrast controlled via hardware potentiometer for stable readability."
+      },
+      {
+        heading: "Input & Output Components",
+        content: "Input: Two tactile push buttons (Snooze and Stop) configured using INPUT_PULLUP, eliminating need for external resistors. Button presses drive state transitions and behavioral escalation. Output: Active Buzzer provides audible alarm using simple HIGH/LOW digital control. Beep cadence escalates based on user behavior rather than volume, reinforcing the project's emotional tone. Analog Control: 10kΩ Potentiometer adjusts LCD contrast via VO pin, separating display legibility from logic."
+      },
+      {
+        heading: "Why This Approach",
+        content: "The technical choices prioritize expressive behavior over raw functionality. The LCD enables text-based personality, buttons create interaction loops, and the buzzer's escalation pattern (not volume) creates the passive-aggressive character. State-driven logic tracks snooze count and time, allowing the alarm's attitude to evolve based on user behavior. It's a system that develops a relationship with the user through repeated interactions."
+      }
+    ]
+  },
+  "idc1-ideation-old": {
+    title: "IDC1 Ideation",
     subtitle: "Interactive Device Concept 1 - Brainstorming & Conceptual Development",
     color: "from-purple-500 to-pink-500",
     sections: [
