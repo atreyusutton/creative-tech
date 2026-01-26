@@ -87,7 +87,7 @@ export default function TechnologyTinderExample() {
                 <h4 className="font-semibold text-green-400 mb-2">Why I value it</h4>
                 <p>
                   These platforms fully enable technology creation. They put the power to build, modify, and 
-                  understand technology directly in anyone's hands not just formally trained and career engineers 
+                  understand technology directly in anyone&apos;s hands not just formally trained and career engineers 
                   at big companies. I learned to code by making small games and this is the hardware version of that. 
                   No gatekeeping, not expensive, just curiosity a bit of creativity and a $70 kit.
                 </p>
@@ -108,7 +108,7 @@ export default function TechnologyTinderExample() {
                 <p>
                   I believe technology should be transparent and modifiable, not black-boxed and locked down on all sides. 
                   Open-source hardware embodies the idea that understanding how things work is a form of empowerment. 
-                  It&apos;s the opposite of &quot;just trust us&quot; it&apos;s &quot;here&apos;s how it works, now make it your own.&quot; That's the 
+                  It&apos;s the opposite of &quot;just trust us&quot; it&apos;s &quot;here&apos;s how it works, now make it your own.&quot; That&apos;s the 
                   kind of technology and creative control I want to spend my time building and advocating for.
                 </p>
               </div>
@@ -139,7 +139,7 @@ export default function TechnologyTinderExample() {
                 className="w-full rounded-xl shadow-2xl border border-white/10"
               />
               <p className="mt-3 text-gray-400 text-sm">
-                TikTok's infinite scroll and algorithmic content delivery system
+                TikTok&apos;s infinite scroll and algorithmic content delivery system
               </p>
             </div>
 
@@ -156,10 +156,10 @@ export default function TechnologyTinderExample() {
               <div className="bg-black/20 rounded-lg p-4 border border-white/5">
                 <h4 className="font-semibold text-red-400 mb-2">Why I reject it</h4>
                 <p>
-                  It hijacks human attention and intention! I've fortunately never never had TikTok but personally 
+                  It hijacks human attention and intention! I&apos;ve fortunately never never had TikTok but personally 
                   lost days to Instagram, Facebook, and worst of all YouTube shorts you open the app to check one 
-                  thing, then suddenly it's an hour later and I've watched hundreds of videos I didn't mean to see. 
-                  It's not that I'm weak-willed it's designed to do that. TikTok is explicitly designed by teams of 
+                  thing, then suddenly it&apos;s an hour later and I&apos;ve watched hundreds of videos I didn&apos;t mean to see. 
+                  It&apos;s not that I&apos;m weak-willed it&apos;s designed to do that. TikTok is explicitly designed by teams of 
                   engineers to be hard to resist and addictive.
                 </p>
               </div>
@@ -194,7 +194,7 @@ export default function TechnologyTinderExample() {
             <div className="text-gray-300 leading-relaxed space-y-4">
               <p>
                 Arduino and TikTok represent opposite visions of what technology can be. One emphasizes creation 
-                and puts power in people's hands. The other optimizes for engagement and treats users as metrics 
+                and puts power in people&apos;s hands. The other optimizes for engagement and treats users as metrics 
                 to pull time from.
               </p>
               <p>
@@ -232,7 +232,7 @@ export default function TechnologyTinderExample() {
                 </p>
                 <p className="leading-relaxed mb-3">
                   &quot;I value it because it puts power directly in people&apos;s hands, not just trained engineers. I learned 
-                  to code making small games. This is the hardware version. No gatekeeping, just curiosity and a $70 kit."
+                  to code making small games. This is the hardware version. No gatekeeping, just curiosity and a $70 kit.&quot;
                 </p>
                 <p className="leading-relaxed mb-3">
                   &quot;It enables <strong>learning by making</strong>. Watch a YouTube, plug it in, start building. Artists, 
