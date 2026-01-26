@@ -11,8 +11,9 @@ const projects = [
   {
     id: "idc1-ideation",
     title: "IDC1 Ideation",
-    description: "Initial concepts and brainstorming for Interactive Device Concept 1",
-    color: "from-purple-500 to-pink-500"
+    description: "Three pet peeve solutions: Passive-aggressive alarm clock, dish sink guilt totem, and the coffee mug that knows you forgot",
+    color: "from-purple-500 to-pink-500",
+    badge: "Due 1/29"
   },
   {
     id: "idc1-project",
