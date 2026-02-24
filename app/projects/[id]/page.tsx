@@ -89,12 +89,12 @@ const projectsData: Record<string, {
     color: "from-green-500 to-emerald-500",
     sections: [
       {
-        heading: "The Project",
-        content: "A black 3D printed box with a button and internal LED. Press the button, the box lights up. Simple interaction exploring physical housing for interactive electronics."
+        heading: "Project Overview",
+        content: "A black 3D printed box with a button and internal LED. Press the button, the box lights up. The enclosure houses the button interface and LED system with custom dimensions for a tight fit. All electronics concealed inside the minimal black housing."
       },
       {
-        heading: "Process & Build",
-        content: "3D printed enclosure houses the button interface and LED system. Custom dimensions for tight fit. All electronics concealed inside the minimal black housing."
+        heading: "Materials & Components",
+        content: "Black 3D printed PLA filament • Push button switch • LED lighting system • Arduino/electronics • Custom enclosure design • Matte black finish"
       }
     ]
   },
