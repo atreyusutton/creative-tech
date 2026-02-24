@@ -242,8 +242,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 <div className="text-gray-300 leading-relaxed space-y-4">
                   <p>{section.content}</p>
                   
-                  {/* Only show placeholder for non-IDC1 ideation pages */}
-                  {id !== 'idc1-ideation' && (
+                  {/* Only show placeholder for pages without custom content */}
+                  {id !== 'idc1-ideation' && id !== 'enclosures' && (
                     <div className="mt-6 p-8 border-2 border-dashed border-white/20 rounded-lg bg-white/5">
                       <div className="text-center text-gray-400">
                         <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
