@@ -85,28 +85,16 @@ const projectsData: Record<string, {
   },
   "enclosures": {
     title: "Enclosures Mini Project",
-    subtitle: "Physical Housing & Fabrication Exploration",
+    subtitle: "3D Printed Interactive Light Box",
     color: "from-green-500 to-emerald-500",
     sections: [
       {
         heading: "Project Overview",
-        content: "This mini project explores physical enclosures and housing for interactive devices, focusing on fabrication techniques and material choices."
+        content: "A black 3D printed enclosure housing an interactive lighting system. Press the button, and the box comes alive with light—a simple interaction that explores the relationship between physical form and digital output."
       },
       {
-        heading: "What - Enclosure Design",
-        content: "Describe your enclosure design. What device is it housing? What materials did you choose and why?"
-      },
-      {
-        heading: "How - Fabrication Process",
-        content: "Document the fabrication process. What tools and techniques did you use? Include details about measurements, cuts, assembly, and finishing."
-      },
-      {
-        heading: "Why - Design Considerations",
-        content: "Explain your design rationale. How does the enclosure relate to the device's function? What aesthetic or practical considerations influenced your choices?"
-      },
-      {
-        heading: "Documentation",
-        content: "Include sketches, diagrams, process photos, and images of the final enclosure. Show different angles and details of construction."
+        heading: "Design & Fabrication",
+        content: "The enclosure was designed and fabricated using 3D printing technology, creating a custom housing for the lighting electronics and button interface."
       }
     ]
   },
@@ -274,6 +262,99 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
               </div>
             ))}
           </div>
+
+          {/* Custom content for Enclosures */}
+          {id === 'enclosures' && (
+            <>
+              {/* Process Photos Grid */}
+              <div className="grid md:grid-cols-2 gap-6 mt-8">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all">
+                  <img 
+                    src="/enclosures/process-1.jpeg" 
+                    alt="3D printed black box - fabrication process"
+                    className="w-full"
+                  />
+                  <div className="p-4">
+                    <p className="text-gray-300 text-sm">
+                      <strong className="text-green-400">Fabrication:</strong> 3D printing the black enclosure with precise dimensions for the electronics and button assembly.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all">
+                  <img 
+                    src="/enclosures/process-2.jpeg" 
+                    alt="Button and lighting assembly"
+                    className="w-full"
+                  />
+                  <div className="p-4">
+                    <p className="text-gray-300 text-sm">
+                      <strong className="text-green-400">Assembly:</strong> Integrating the button interface and internal lighting system into the custom enclosure.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Assembly GIF Section */}
+              <div className="mt-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">
+                  Assembly Process
+                </h2>
+                <div className="rounded-xl overflow-hidden shadow-2xl border border-white/10">
+                  <img 
+                    src="/enclosures/assembly.gif" 
+                    alt="Assembly process animation showing the box lighting up"
+                    className="w-full"
+                  />
+                </div>
+                <p className="mt-4 text-gray-300 text-sm">
+                  The interactive light box in action: press the button, and the enclosure illuminates from within. 
+                  The 3D printed housing provides a clean, minimal aesthetic while concealing the electronics.
+                </p>
+              </div>
+
+              {/* Technical Details */}
+              <div className="mt-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">
+                  Technical Details
+                </h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-semibold text-green-400">Enclosure</h3>
+                    <ul className="space-y-2 text-gray-300 text-sm">
+                      <li>• <strong>Material:</strong> Black 3D printed plastic</li>
+                      <li>• <strong>Fabrication:</strong> 3D printing for custom fit</li>
+                      <li>• <strong>Finish:</strong> Matte black surface</li>
+                      <li>• <strong>Design:</strong> Minimal, functional housing</li>
+                    </ul>
+                  </div>
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-semibold text-green-400">Electronics</h3>
+                    <ul className="space-y-2 text-gray-300 text-sm">
+                      <li>• <strong>Input:</strong> Push button interface</li>
+                      <li>• <strong>Output:</strong> Internal LED lighting system</li>
+                      <li>• <strong>Interaction:</strong> Button press triggers light</li>
+                      <li>• <strong>Housing:</strong> All electronics concealed inside</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Design Rationale */}
+              <div className="mt-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  Design Rationale
+                </h2>
+                <p className="text-gray-300 leading-relaxed">
+                  The black 3D printed enclosure serves both functional and aesthetic purposes. The minimal design 
+                  keeps focus on the interaction—press the button, see the light—while the custom housing protects 
+                  the internal electronics and provides a clean, professional finish. 3D printing allowed for precise 
+                  dimensions and rapid iteration, making it possible to create a perfectly fitted enclosure for the 
+                  lighting system and button interface.
+                </p>
+              </div>
+            </>
+          )}
 
           {/* Custom content for IDC1 Ideation */}
           {id === 'idc1-ideation' && (
