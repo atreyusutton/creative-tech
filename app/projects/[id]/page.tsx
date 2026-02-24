@@ -381,17 +381,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             </>
           )}
 
-          {/* Guide Section */}
-          <div className="mt-12 p-6 bg-purple-500/10 border border-purple-500/20 rounded-2xl">
-            <h3 className="text-lg font-semibold text-purple-300 mb-2">
-              📝 Documentation Guide
-            </h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Remember to include both visual media (images, videos, sketches, diagrams) AND written descriptions for each piece of documentation. 
-              Always explain <strong>what</strong> the subject is, <strong>how</strong> you created or implemented it, and <strong>why</strong> it's 
-              significant to your project concept.
-            </p>
-          </div>
         </div>
       </div>
     </div>
