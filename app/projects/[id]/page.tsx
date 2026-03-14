@@ -235,24 +235,24 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             <div className="mt-8 space-y-8">
               {/* Process Photos */}
               <div className="grid md:grid-cols-2 gap-6">
-                <img 
-                  src="/enclosures/process-1.jpeg" 
+                <img
+                  src="/enclosures/process-1.jpeg"
                   alt="3D printed black box"
-                  className="w-full rounded-xl shadow-lg border border-white/10"
+                  className="w-full max-h-screen object-contain rounded-xl shadow-lg border border-white/10"
                 />
-                <img 
-                  src="/enclosures/process-2.jpeg" 
+                <img
+                  src="/enclosures/process-2.jpeg"
                   alt="Button and lighting assembly"
-                  className="w-full rounded-xl shadow-lg border border-white/10"
+                  className="w-full max-h-screen object-contain rounded-xl shadow-lg border border-white/10"
                 />
               </div>
 
               {/* GIF - Smaller */}
               <div className="max-w-2xl mx-auto">
-                <img 
-                  src="/enclosures/assembly.gif" 
+                <img
+                  src="/enclosures/assembly.gif"
                   alt="Box lighting up when button pressed"
-                  className="w-full rounded-xl shadow-2xl border border-white/10"
+                  className="w-full max-h-screen object-contain rounded-xl shadow-2xl border border-white/10"
                 />
                 <p className="mt-3 text-gray-400 text-sm text-center">
                   Press the button → Box lights up. 3D printed housing, LED inside, simple interaction.
@@ -270,7 +270,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 <img
                   src="/idc1-project/enclosure-box.jpg"
                   alt="Yosemite Sam alarm clock enclosure"
-                  className="w-full rounded-xl shadow-2xl border border-white/10"
+                  className="w-full max-h-screen object-contain rounded-xl shadow-2xl border border-white/10"
                 />
                 <p className="mt-3 text-gray-400 text-sm text-center">
                   Yosemite Sam enclosure — &quot;I&apos;m the meanest, roughest, toughest hombre that&apos;s ever crossed the Rio Grande.&quot;
@@ -283,7 +283,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 <video
                   controls
                   preload="metadata"
-                  className="w-full rounded-xl shadow-2xl border border-white/10 mb-4"
+                  className="w-full max-h-screen rounded-xl shadow-2xl border border-white/10 mb-4"
                 >
                   <source src="/idc1-project/demo.mp4" type="video/mp4" />
                   Your browser does not support video playback.
@@ -515,10 +515,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 
                 {/* Image 1 */}
                 <div className="mb-8">
-                  <img 
-                    src="/idc1/annoying-alarm.webp" 
+                  <img
+                    src="/idc1/annoying-alarm.webp"
                     alt="Passive-aggressive alarm clock concept"
-                    className="w-full rounded-xl shadow-2xl border border-white/10"
+                    className="w-full max-h-screen object-contain rounded-xl shadow-2xl border border-white/10"
                   />
                   <p className="mt-3 text-gray-400 text-sm">
                     The alarm that judges your life choices, one snooze at a time
@@ -550,10 +550,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
                 {/* Image 2 */}
                 <div>
-                  <img 
-                    src="/idc1/billmurray.png" 
+                  <img
+                    src="/idc1/billmurray.png"
                     alt="Bill Murray Groundhog Day - the eternal snooze loop"
-                    className="w-full rounded-xl shadow-2xl border border-white/10"
+                    className="w-full max-h-screen object-contain rounded-xl shadow-2xl border border-white/10"
                   />
                   <p className="mt-3 text-gray-400 text-sm">
                     <em>Groundhog Day</em> - A visual metaphor for the eternal snooze loop. The alarm becomes your personal Phil Connors.
