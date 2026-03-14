@@ -54,32 +54,16 @@ const projectsData: Record<string, {
   },
   "idc1-project": {
     title: "IDC1 Project",
-    subtitle: "Interactive Device Concept 1 - Full Implementation",
+    subtitle: "Passive-Aggressive Alarm Clock — Interactive Device Concept 1",
     color: "from-blue-500 to-cyan-500",
     sections: [
       {
-        heading: "Project Overview",
-        content: "This section contains the complete documentation for the first Interactive Device Concept project, from initial development through final implementation."
+        heading: "What",
+        content: "An alarm clock that gets increasingly judgmental the more you snooze it. Built in a Yosemite Sam enclosure, it uses a state machine, escalating buzzer patterns, shrinking snooze windows, and 40 custom voice clips to create a device that is annoying on purpose — in a funny way."
       },
       {
-        heading: "What - Final Device",
-        content: "Describe your completed device. What does it do? What are its key features and interactions?"
-      },
-      {
-        heading: "How - Build Process",
-        content: "Document your build process step by step. Include details about materials, tools, code, circuits, and any challenges you encountered along the way."
-      },
-      {
-        heading: "Why - Design Rationale",
-        content: "Explain your design decisions. Why did you make specific choices about form, function, and interaction? How does the final device relate to your initial concept?"
-      },
-      {
-        heading: "Process Documentation",
-        content: "Include images and videos of your building process, prototypes, iterations, and testing phases."
-      },
-      {
-        heading: "Final Documentation",
-        content: "Present your completed device with high-quality images and videos showing it in action. Include detailed captions explaining functionality and user experience."
+        heading: "Why",
+        content: "Snoozing too much is a genuine pet peeve. Rather than just making a louder alarm, I wanted the device to have personality — something that reacts to your behavior and holds you accountable through escalating passive-aggression. The constraint that you can't stop it until you've snoozed at least twice forces you into the experience whether you like it or not."
       }
     ]
   },
@@ -274,6 +258,193 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                   Press the button → Box lights up. 3D printed housing, LED inside, simple interaction.
                 </p>
               </div>
+            </div>
+          )}
+
+          {/* Custom content for IDC1 Project */}
+          {id === 'idc1-project' && (
+            <div className="mt-8 space-y-8">
+
+              {/* Enclosure photo */}
+              <div>
+                <img
+                  src="/idc1-project/enclosure-box.jpg"
+                  alt="Yosemite Sam alarm clock enclosure"
+                  className="w-full rounded-xl shadow-2xl border border-white/10"
+                />
+                <p className="mt-3 text-gray-400 text-sm text-center">
+                  Yosemite Sam enclosure — &quot;I&apos;m the meanest, roughest, toughest hombre that&apos;s ever crossed the Rio Grande.&quot;
+                </p>
+              </div>
+
+              {/* Video embed placeholder */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center">
+                <p className="text-gray-400 text-sm mb-2">Demo video — watch on YouTube</p>
+                <a
+                  href="#"
+                  className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium text-sm hover:opacity-90 transition-opacity"
+                >
+                  Watch Demo (2:28)
+                </a>
+                <p className="mt-3 text-gray-500 text-xs">Replace the href above with your YouTube or Vimeo link</p>
+              </div>
+
+              {/* Hardware Table */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">Hardware</h2>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm text-gray-300">
+                    <thead>
+                      <tr className="border-b border-white/20">
+                        <th className="text-left py-3 pr-6 text-cyan-400 font-semibold">Component</th>
+                        <th className="text-left py-3 text-cyan-400 font-semibold">Purpose</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/10">
+                      {[
+                        ["Arduino (Uno/Nano)", "Main microcontroller"],
+                        ["LCD 1602 (16×2)", "Displays time and state"],
+                        ["Active buzzer (D9)", "Beeping alarm sound"],
+                        ["Snooze button (D7)", "Snooze the alarm"],
+                        ["Stop button (D8)", "Stop the alarm (if earned)"],
+                        ["DFPlayer Mini", "MP3 audio module"],
+                        ["Speaker (via DFPlayer)", "Plays voice clips"],
+                        ["SD card (in DFPlayer)", "Holds 40 .mp3 files"],
+                      ].map(([component, purpose]) => (
+                        <tr key={component}>
+                          <td className="py-3 pr-6 font-mono text-white">{component}</td>
+                          <td className="py-3 text-gray-400">{purpose}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* State Machine */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-4">State Machine</h2>
+                <div className="bg-black/30 rounded-xl p-6 font-mono text-sm text-cyan-300 mb-6 overflow-x-auto">
+                  ST_IDLE → ST_ALARM → ST_SNOOZ → ST_ALARM → ... → ST_STOP → ST_IDLE
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    { state: "IDLE", color: "text-blue-400", desc: "Normal time display, waiting for alarm time" },
+                    { state: "ALARM", color: "text-red-400", desc: "Buzzing + LCD message + voice clip playing" },
+                    { state: "SNOOZ", color: "text-amber-400", desc: "Alarm silenced temporarily, countdown running" },
+                    { state: "STOP", color: "text-green-400", desc: "Alarm fully dismissed, auto-resets to IDLE after 5 seconds" },
+                  ].map(({ state, color, desc }) => (
+                    <div key={state} className="bg-black/20 rounded-xl p-4">
+                      <span className={`font-mono font-bold text-lg ${color}`}>{state}</span>
+                      <p className="text-gray-400 text-sm mt-1">{desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Core Mechanics */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">Core Mechanics</h2>
+                <div className="space-y-6 text-gray-300 text-sm leading-relaxed">
+                  <div>
+                    <h3 className="text-amber-400 font-semibold mb-1">Buzzer escalation</h3>
+                    <p>Each snooze makes the beeping faster: <code className="bg-white/10 px-2 py-0.5 rounded text-cyan-300">interval = 800ms − (snoozeCount × 120ms)</code>, minimum 120ms.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-amber-400 font-semibold mb-1">Snooze duration shrinks</h3>
+                    <p>Each snooze is shorter than the last: <code className="bg-white/10 px-2 py-0.5 rounded text-cyan-300">duration = 20s − (snoozeCount × 3s)</code>, minimum 5s.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-amber-400 font-semibold mb-1">Stop is blocked</h3>
+                    <p>You cannot stop the alarm until you&apos;ve snoozed at least twice. Trying early plays a &quot;forceful refusal&quot; clip and the alarm keeps going.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-amber-400 font-semibold mb-1">Voice pause</h3>
+                    <p>When a clip plays, the buzzer goes silent for up to 8 seconds (or until DFPlayer signals done) so you can actually hear what it says. Then buzzing resumes.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-amber-400 font-semibold mb-1">Dirty-tracking LCD</h3>
+                    <p>The display only redraws when time, state, or snooze count actually changes — no unnecessary flicker.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Audio System */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-2">Audio Clip System</h2>
+                <p className="text-gray-400 text-sm mb-6">40 MP3 files organized into 4 categories on the SD card. <code className="bg-white/10 px-2 py-0.5 rounded text-cyan-300">randomClip()</code> picks a random file from the active category, avoiding repeating the last one played.</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm text-gray-300">
+                    <thead>
+                      <tr className="border-b border-white/20">
+                        <th className="text-left py-3 pr-6 text-cyan-400 font-semibold">Files</th>
+                        <th className="text-left py-3 pr-6 text-cyan-400 font-semibold">Category</th>
+                        <th className="text-left py-3 text-cyan-400 font-semibold">When played</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/10">
+                      {[
+                        ["0001–0010", "Alarm initiation", "Alarm first triggers"],
+                        ["0011–0020", "Snooze response", "You hit snooze"],
+                        ["0021–0030", "Forceful refusal", "You try to stop too early"],
+                        ["0031–0040", "Stop acceptance", "You've earned the stop"],
+                      ].map(([files, category, when]) => (
+                        <tr key={files}>
+                          <td className="py-3 pr-6 font-mono text-white">{files}</td>
+                          <td className="py-3 pr-6 text-amber-400">{category}</td>
+                          <td className="py-3 text-gray-400">{when}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Audio Clips */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-2">Voice Clips</h2>
+                <p className="text-gray-400 text-sm mb-6">All 40 MP3s used by the alarm. Each category plays at a different moment in the interaction.</p>
+                {[
+                  { label: "Alarm Initiation", range: [1, 10], color: "text-red-400", border: "border-red-500/30", bg: "from-red-500/10 to-orange-500/10" },
+                  { label: "Snooze Response", range: [11, 20], color: "text-amber-400", border: "border-amber-500/30", bg: "from-amber-500/10 to-yellow-500/10" },
+                  { label: "Forceful Refusal", range: [21, 30], color: "text-purple-400", border: "border-purple-500/30", bg: "from-purple-500/10 to-pink-500/10" },
+                  { label: "Stop Acceptance", range: [31, 40], color: "text-green-400", border: "border-green-500/30", bg: "from-green-500/10 to-emerald-500/10" },
+                ].map(({ label, range, color, border, bg }) => (
+                  <div key={label} className={`bg-gradient-to-br ${bg} border ${border} rounded-xl p-5 mb-4`}>
+                    <h3 className={`font-semibold mb-3 ${color}`}>{label}</h3>
+                    <div className="space-y-2">
+                      {Array.from({ length: range[1] - range[0] + 1 }, (_, i) => {
+                        const n = (range[0] + i).toString().padStart(4, "0");
+                        return (
+                          <div key={n} className="flex items-center gap-3">
+                            <span className="font-mono text-xs text-gray-500 w-10">{n}</span>
+                            <audio controls src={`/idc1-project/audio/${n}.mp3`} className="h-8 w-full" preload="none" />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* LCD Display */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-4">LCD Display</h2>
+                <div className="bg-black/50 rounded-xl p-5 font-mono text-green-400 text-sm mb-6 border border-green-900/50">
+                  <div>07:01 ALRM</div>
+                  <div>You said that.</div>
+                </div>
+                <ul className="space-y-2 text-gray-300 text-sm">
+                  <li><span className="text-cyan-400 font-semibold">Line 1:</span> HH:MM STATE — e.g., 07:01 ALRM</li>
+                  <li><span className="text-cyan-400 font-semibold">Line 2:</span> Escalating passive-aggressive messages as snooze count climbs:</li>
+                </ul>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {["Good morning.", "One more min.", "You said that.", "Wont help.", "You're awake.", "You chose this."].map((msg) => (
+                    <span key={msg} className="bg-black/30 border border-white/10 rounded px-3 py-1 font-mono text-green-400 text-xs">{msg}</span>
+                  ))}
+                </div>
+              </div>
+
             </div>
           )}
 
