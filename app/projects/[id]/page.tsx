@@ -451,6 +451,22 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           {id === 'motor-buffet' && (
             <div className="mt-8 space-y-8">
 
+              {/* Intro: Three motors */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-4">Getting Three Motors Running</h2>
+                <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                  Before the tornado build, the assignment started with getting three different motor types working independently — a servo, a stepper, and a DC motor. Each one has a different control model: the servo takes a position angle, the stepper moves in discrete steps with direction and speed control, and the DC motor just spins with variable power. Getting all three running was the foundation for understanding what kind of movement was possible for the final project.
+                </p>
+                <video
+                  controls
+                  preload="metadata"
+                  className="w-full max-h-screen rounded-xl shadow-2xl border border-white/10"
+                >
+                  <source src="/motor-buffet/motors-demo.mp4" type="video/mp4" />
+                  Your browser does not support video playback.
+                </video>
+              </div>
+
               {/* Hero photo */}
               <div>
                 <img
