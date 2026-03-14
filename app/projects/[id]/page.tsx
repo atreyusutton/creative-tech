@@ -99,28 +99,20 @@ const projectsData: Record<string, {
   },
   "idc2-ideation": {
     title: "IDC2 Ideation",
-    subtitle: "Interactive Device Concept 2 - Conceptual Development",
+    subtitle: "Spotify Record Player — Vintage Turntable as a Streaming Device",
     color: "from-indigo-500 to-purple-500",
     sections: [
       {
-        heading: "Overview",
-        content: "This section documents the ideation phase for the second Interactive Device Concept, building on lessons learned from IDC1."
+        heading: "The Concept",
+        content: "Take a real vintage vinyl turntable and retrofit it into a Spotify Connect device — preserving the physical authenticity of a record player while modernizing what's actually playing music. Real vinyl still spins. The original motor, platter, and switches all work. But a Raspberry Pi hidden inside now streams anything from Spotify, and a round 720×720 display mounted in the center of the platter spins album art at exactly 33⅓ RPM."
       },
       {
-        heading: "What - Evolved Concepts",
-        content: "Document your ideas for IDC2. How has your thinking evolved since IDC1? What new concepts are you exploring?"
+        heading: "Why",
+        content: "The tension between analog and digital is the whole point. A record player is one of the most beloved physical objects in music culture — it has ritual, weight, and presence. Spotify has everything else. The project asks: what if you didn't have to choose? The aesthetic goal is that it looks, sounds, and feels like a record player. It just plays anything."
       },
       {
-        heading: "How - Planned Approach",
-        content: "Outline your technical and creative approach. What methods, materials, and technologies will you employ? Include preliminary sketches and diagrams."
-      },
-      {
-        heading: "Why - Conceptual Development",
-        content: "Explain the conceptual framework for this project. What are you trying to achieve? How does this project advance your creative tech practice?"
-      },
-      {
-        heading: "Media & Documentation",
-        content: "Add your ideation materials: sketches, mood boards, diagrams, references, and any other visual or written documentation of your concept development."
+        heading: "How It Works",
+        content: "Raspberry Pi 4 runs raspotify (librespot), which makes the Pi appear as a Spotify Connect device. When a track plays, a shell hook writes track info and cover art to a temp file. A pygame display script polls that file and renders the album art spinning on the round screen. A Flask web app on port 8080 provides a full touch control UI — player, playlists, and search — accessible from any browser on the network. Power comes from a 12V→5V buck converter tapped from the same supply running the motor."
       }
     ]
   },
@@ -441,6 +433,53 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                   {["Good morning.", "One more min.", "You said that.", "Wont help.", "You're awake.", "You chose this."].map((msg) => (
                     <span key={msg} className="bg-black/30 border border-white/10 rounded px-3 py-1 font-mono text-green-400 text-xs">{msg}</span>
                   ))}
+                </div>
+              </div>
+
+            </div>
+          )}
+
+          {/* Custom content for IDC2 Ideation */}
+          {id === 'idc2-ideation' && (
+            <div className="mt-8 space-y-8">
+
+              {/* System overview */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">System Overview</h2>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    { label: "Physical layer", color: "text-indigo-400", desc: "Original turntable motor, platter, and switches intact. Real vinyl spins." },
+                    { label: "Compute", color: "text-indigo-400", desc: "Raspberry Pi 4, powered via 12V→5V buck converter from the motor supply." },
+                    { label: "Streaming", color: "text-indigo-400", desc: "raspotify (librespot) — Pi appears as a Spotify Connect device on your network." },
+                    { label: "Display", color: "text-indigo-400", desc: "Waveshare 4\" round 720×720 HDMI screen in the platter center. Album art spins at 33⅓ RPM." },
+                    { label: "Audio out", color: "text-indigo-400", desc: "InnoMaker DAC HAT → RCA → speakers. No compressed headphone jack audio." },
+                    { label: "Control UI", color: "text-indigo-400", desc: "Flask web app on port 8080 — player, playlists, and search from any browser on the network." },
+                  ].map(({ label, color, desc }) => (
+                    <div key={label} className="bg-black/20 rounded-xl p-4">
+                      <span className={`font-semibold text-sm ${color}`}>{label}</span>
+                      <p className="text-gray-400 text-sm mt-1">{desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Prototype videos */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-2">Prototype Videos</h2>
+                <p className="text-gray-400 text-sm mb-6">Early builds testing the display and Spotify integration.</p>
+                <div className="space-y-6">
+                  <div>
+                    <video controls preload="metadata" className="w-full max-h-screen rounded-xl shadow-2xl border border-white/10">
+                      <source src="/idc2-ideation/prototype-1.mp4" type="video/mp4" />
+                    </video>
+                    <p className="mt-3 text-gray-400 text-sm text-center">Prototype 1</p>
+                  </div>
+                  <div>
+                    <video controls preload="metadata" className="w-full max-h-screen rounded-xl shadow-2xl border border-white/10">
+                      <source src="/idc2-ideation/prototype-2.mp4" type="video/mp4" />
+                    </video>
+                    <p className="mt-3 text-gray-400 text-sm text-center">Prototype 2</p>
+                  </div>
                 </div>
               </div>
 
