@@ -84,28 +84,16 @@ const projectsData: Record<string, {
   },
   "motor-buffet": {
     title: "Motor Buffet Mini Project",
-    subtitle: "Mechanical Movement & Motor Exploration",
+    subtitle: "War Pigs Tornado — 120V AC Motor with Light & Sound",
     color: "from-orange-500 to-red-500",
     sections: [
       {
-        heading: "Project Overview",
-        content: "This mini project involves experimentation with different types of motors and mechanical movement systems."
+        heading: "What",
+        content: "A motorized tornado sculpture that spins an acrylic vortex tower while playing War Pigs by Black Sabbath. Black geometric enclosure, blue LED glow, toggle switch power, and a DFPlayer Mini driving the audio — all coordinated by Arduino."
       },
       {
-        heading: "What - Motor Experiments",
-        content: "Describe the motors and movements you explored. What types of motors did you work with? What movements or mechanisms did you create?"
-      },
-      {
-        heading: "How - Technical Implementation",
-        content: "Document your technical setup. How did you control the motors? What circuits, code, or mechanical systems did you build? Include diagrams and schematics."
-      },
-      {
-        heading: "Why - Exploration Goals",
-        content: "Explain what you learned from these experiments. Why did you choose these particular motors or movements? What insights did you gain about mechanical systems?"
-      },
-      {
-        heading: "Documentation",
-        content: "Include videos of your motors in action, circuit diagrams, code snippets, and images of your setups. Describe each experiment clearly."
+        heading: "Why",
+        content: "The challenge was to explore mechanical movement through a real motor system. We wanted something theatrical — not just a motor spinning, but a complete experience with light, sound, and physical form working together. War Pigs felt right."
       }
     ]
   },
@@ -453,6 +441,103 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                   {["Good morning.", "One more min.", "You said that.", "Wont help.", "You're awake.", "You chose this."].map((msg) => (
                     <span key={msg} className="bg-black/30 border border-white/10 rounded px-3 py-1 font-mono text-green-400 text-xs">{msg}</span>
                   ))}
+                </div>
+              </div>
+
+            </div>
+          )}
+
+          {/* Custom content for Motor Buffet */}
+          {id === 'motor-buffet' && (
+            <div className="mt-8 space-y-8">
+
+              {/* Hero photo */}
+              <div>
+                <img
+                  src="/motor-buffet/tornado.jpg"
+                  alt="War Pigs tornado sculpture"
+                  className="w-full max-h-screen object-contain rounded-xl shadow-2xl border border-white/10"
+                />
+                <p className="mt-3 text-gray-400 text-sm text-center">
+                  Black geometric base, acrylic tornado tower, blue LEDs — toggle switch brings it to life
+                </p>
+              </div>
+
+              {/* Demo video */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-4">Demo</h2>
+                <video
+                  controls
+                  preload="metadata"
+                  className="w-full max-h-screen rounded-xl shadow-2xl border border-white/10 mb-4"
+                >
+                  <source src="/motor-buffet/tornado-demo.mp4" type="video/mp4" />
+                  Your browser does not support video playback.
+                </video>
+                <a
+                  href="/motor-buffet/tornado-demo.mp4"
+                  download="war-pigs-tornado-demo.mp4"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white font-medium text-sm hover:opacity-90 transition-opacity"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download MP4
+                </a>
+              </div>
+
+              {/* Hardware */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">Hardware</h2>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm text-gray-300">
+                    <thead>
+                      <tr className="border-b border-white/20">
+                        <th className="text-left py-3 pr-6 text-orange-400 font-semibold">Component</th>
+                        <th className="text-left py-3 text-orange-400 font-semibold">Purpose</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/10">
+                      {[
+                        ["120V AC Motor", "Spins the acrylic tornado tower"],
+                        ["Arduino", "Controls lights and audio sequencing"],
+                        ["DFPlayer Mini", "Plays War Pigs from SD card"],
+                        ["Speaker", "Audio output"],
+                        ["Blue LEDs", "Illuminate the acrylic vortex"],
+                        ["Toggle switch", "Main power on/off"],
+                        ["Black geometric enclosure", "Cardboard and foam base housing all electronics"],
+                        ["Acrylic tower", "Laser-cut vortex form that spins and glows"],
+                      ].map(([component, purpose]) => (
+                        <tr key={component}>
+                          <td className="py-3 pr-6 font-mono text-white">{component}</td>
+                          <td className="py-3 text-gray-400">{purpose}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* How it works */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">How It Works</h2>
+                <div className="space-y-5 text-gray-300 text-sm leading-relaxed">
+                  <div>
+                    <h3 className="text-orange-400 font-semibold mb-1">120V AC Motor</h3>
+                    <p>Mains-voltage AC motor drives the rotation of the acrylic tornado tower. The high-torque output keeps the vortex spinning steadily — something a small DC motor couldn&apos;t achieve with the same presence.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-orange-400 font-semibold mb-1">Audio</h3>
+                    <p>DFPlayer Mini plays War Pigs by Black Sabbath off an SD card, triggered by Arduino on power-up. The speaker is housed inside the base enclosure.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-orange-400 font-semibold mb-1">Lighting</h3>
+                    <p>Blue LEDs are positioned inside the base to backlight the transparent acrylic tower, making the vortex glow as it spins. Arduino controls the LED state in sync with the audio trigger.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-orange-400 font-semibold mb-1">Enclosure</h3>
+                    <p>Black painted geometric base built from cardboard with a brass toggle switch on the front panel. The mid-section exposes the corrugated cardboard structure as a design element, with status LEDs visible through it.</p>
+                  </div>
                 </div>
               </div>
 
