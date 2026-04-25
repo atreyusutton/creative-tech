@@ -42,7 +42,7 @@ const projects = [
   {
     id: "idc2-project",
     title: "IDC2 Project",
-    description: "Complete implementation of Interactive Device Concept 2",
+    description: "Spotify Record Player: vintage 1byone turntable retrofitted with a Raspberry Pi, DAC HAT, and round display so it streams Spotify while real vinyl spins on the platter.",
     color: "from-rose-500 to-pink-500"
   }
 ];

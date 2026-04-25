@@ -118,32 +118,20 @@ const projectsData: Record<string, {
   },
   "idc2-project": {
     title: "IDC2 Project",
-    subtitle: "Interactive Device Concept 2 - Full Implementation",
+    subtitle: "Spotify Record Player — Vintage Turntable Retrofit Build",
     color: "from-rose-500 to-pink-500",
     sections: [
       {
-        heading: "Project Overview",
-        content: "This section contains comprehensive documentation for the second Interactive Device Concept project, showcasing your growth throughout the semester."
+        heading: "What",
+        content: "A 1byone vinyl turntable rebuilt around a Raspberry Pi 4 so it functions as a Spotify Connect streaming device. The OEM motor, platter, and switches still work — real vinyl spins — but a Waveshare 4\" round HDMI display sits in the center of the platter showing live album art rotating at 33⅓ RPM. A web control UI runs on the Pi at port 8080 for browsing playlists, scrubbing tracks, and adjusting volume from any browser on the network."
       },
       {
-        heading: "What - Final Implementation",
-        content: "Describe your completed IDC2 device. What functionality does it have? How does it differ from or build upon IDC1?"
+        heading: "Why",
+        content: "Record players have ritual, weight, and presence. Spotify has everything else. The point of the build was to keep the physical experience of a turntable — the switch, the platter, the spinning record — and add a streaming brain that doesn't break the illusion. From across the room it looks like a record player. Up close, the album art on the platter and the responsive control UI tell you it's something else."
       },
       {
-        heading: "How - Build & Process",
-        content: "Document your complete build process. Include technical details, code, circuits, fabrication steps, and any innovations or solutions you developed."
-      },
-      {
-        heading: "Why - Design Philosophy",
-        content: "Explain your design decisions and overall philosophy. What did you learn throughout the semester? How does this project represent your creative tech journey?"
-      },
-      {
-        heading: "Process Documentation",
-        content: "Include comprehensive process documentation: sketches, prototypes, iterations, testing, troubleshooting, and refinement stages."
-      },
-      {
-        heading: "Final Documentation",
-        content: "Present your finished device with professional documentation: high-quality images, demonstration videos, user interaction sequences, and detailed technical specifications."
+        heading: "From Ideation to Build",
+        content: "The ideation phase mapped out the parts (Pi 4, DAC HAT, round HDMI display, 12V→5V buck converter) and the data flow (Spotify Connect → librespot → onevent hook → JSON → display script → spinning album art). The build phase wired all of that into the existing turntable chassis without touching the OEM motor circuit, then layered the Flask control UI on top. The result is a self-contained device that boots straight into both services on power-up."
       }
     ]
   }
@@ -434,6 +422,201 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                     <span key={msg} className="bg-black/30 border border-white/10 rounded px-3 py-1 font-mono text-green-400 text-xs">{msg}</span>
                   ))}
                 </div>
+              </div>
+
+            </div>
+          )}
+
+          {/* Custom content for IDC2 Project */}
+          {id === 'idc2-project' && (
+            <div className="mt-8 space-y-8">
+
+              {/* Hero photo — studio setup */}
+              <div>
+                <img
+                  src="/idc2-project/setup-1.jpg"
+                  alt="Spotify Record Player on the studio bench"
+                  className="w-full max-h-screen object-contain rounded-xl shadow-2xl border border-white/10"
+                />
+                <p className="mt-3 text-gray-400 text-sm text-center">
+                  Studio bench: KRK monitors, Scarlett interface, Pi-driven turntable streaming Spotify with the round display lighting up the platter.
+                </p>
+              </div>
+
+              {/* Build process video */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-4">Build Walkthrough</h2>
+                <video
+                  controls
+                  preload="metadata"
+                  className="w-full max-h-screen rounded-xl shadow-2xl border border-white/10 mb-4"
+                >
+                  <source src="/idc2-project/build-process.mp4" type="video/mp4" />
+                  Your browser does not support video playback.
+                </video>
+                <a
+                  href="/idc2-project/build-process.mp4"
+                  download="spotify-record-player-build.mp4"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-medium text-sm hover:opacity-90 transition-opacity"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download MP4
+                </a>
+              </div>
+
+              {/* Home setup photo */}
+              <div>
+                <img
+                  src="/idc2-project/setup-2.jpg"
+                  alt="Spotify Record Player at the home desk"
+                  className="w-full max-h-screen object-contain rounded-xl shadow-2xl border border-white/10"
+                />
+                <p className="mt-3 text-gray-400 text-sm text-center">
+                  Home desk: same record player on the wood top, RCA into the audio interface, KRK monitors on either side.
+                </p>
+              </div>
+
+              {/* Hardware */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">Hardware</h2>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm text-gray-300">
+                    <thead>
+                      <tr className="border-b border-white/20">
+                        <th className="text-left py-3 pr-6 text-rose-400 font-semibold">Component</th>
+                        <th className="text-left py-3 text-rose-400 font-semibold">Purpose</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/10">
+                      {[
+                        ["Raspberry Pi 4 (8 GB)", "Streaming + display + control UI on Bookworm/Wayland"],
+                        ["Waveshare 4\" Round HDMI LCD", "720×720 IPS touch display in the platter center"],
+                        ["InnoMaker HiFi DAC HAT (PCM5122)", "384 kHz / 32-bit audio out via RCA + 3.5 mm"],
+                        ["ALITOVE 12V 5A AC-DC Supply", "Single mains brick powering motor + Pi"],
+                        ["DROK 12V→5V Buck Converter", "Steps 12V down to 5V USB-C for the Pi"],
+                        ["12 AWG Inline Fuse Holder (5A)", "Branch protection on the 12V rail"],
+                        ["18 AWG Red/Black DC Wire", "12V wiring between modules"],
+                        ["DC Barrel Jacks (5.5×2.1 mm)", "Modular, removable 12V connections"],
+                        ["USB-C → 2-wire pigtail", "Custom 5V cable from buck converter to Pi"],
+                        ["1byone OEM motor + switches", "Master on/off, motor on/off, 33/45 RPM — all original"],
+                      ].map(([component, purpose]) => (
+                        <tr key={component}>
+                          <td className="py-3 pr-6 font-mono text-white">{component}</td>
+                          <td className="py-3 text-gray-400">{purpose}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Wiring diagram */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-4">Power Wiring</h2>
+                <p className="text-gray-400 text-sm mb-6">
+                  Single 12V brick splits into two branches after the master switch and fuse: one to the OEM motor circuit, the other through the buck converter to the Pi. The motor is completely independent of the Pi — pulling Pi power doesn&apos;t stop the platter, and vice versa.
+                </p>
+                <pre className="bg-black/40 rounded-xl p-6 font-mono text-xs sm:text-sm text-rose-300 overflow-x-auto leading-relaxed">{`             AC WALL
+                │
+                ▼
+        12V 5A POWER SUPPLY
+                │
+          Master Switch
+                │
+             5A Fuse
+                │
+     +----------+----------+
+     |                     |
+     ▼                     ▼
+ MOTOR SYSTEM        Buck Converter
+ (on/off, speed)           │
+                           ▼
+                        5V USB-C
+                           │
+                           ▼
+                      Raspberry Pi
+                        │      │
+                        │      ▼
+                        │   Round Display
+                        ▼
+                      DAC HAT
+                        │
+                        ▼
+                     RCA OUT`}</pre>
+              </div>
+
+              {/* Software architecture */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-4">Software Flow</h2>
+                <p className="text-gray-400 text-sm mb-6">
+                  Three services run on the Pi as systemd units. <code className="bg-white/10 px-2 py-0.5 rounded text-rose-300">raspotify</code> is the Spotify Connect endpoint, <code className="bg-white/10 px-2 py-0.5 rounded text-rose-300">record-display</code> draws the spinning album art, and <code className="bg-white/10 px-2 py-0.5 rounded text-rose-300">control</code> serves the web UI on port 8080.
+                </p>
+                <pre className="bg-black/40 rounded-xl p-6 font-mono text-xs sm:text-sm text-rose-300 overflow-x-auto leading-relaxed">{`Spotify (phone/desktop)    ←──────────────────────────────┐
+        │  Spotify Connect                                  │
+        ▼                                                   │
+   Raspotify (librespot)                          control.py (Flask :8080)
+        │                                                   │
+        ├──→ DAC HAT ──→ RCA OUT ──→ Speakers      Spotify Web API
+        │
+        ▼
+   onevent.sh  →  /tmp/now_playing.json
+        │
+        ▼
+   display.py  (spinning album art on round LCD)`}</pre>
+                <div className="mt-6 grid sm:grid-cols-2 gap-4">
+                  {[
+                    { label: "raspotify", color: "text-rose-400", desc: "librespot daemon — makes the Pi appear as Spotify Connect device \"Record Player\". 320 kbps to the DAC HAT." },
+                    { label: "onevent.sh", color: "text-rose-400", desc: "librespot event hook. On track-change writes title, artist, and cover art URL to /tmp/now_playing.json." },
+                    { label: "display.py", color: "text-rose-400", desc: "pygame loop on the 720×720 round screen. Polls the JSON, downloads the cover, crossfades, spins at 33⅓ RPM." },
+                    { label: "control.py", color: "text-rose-400", desc: "Flask + Spotify Web API. Dark-themed web UI for play/pause, seek, volume, playlist browsing on port 8080." },
+                  ].map(({ label, color, desc }) => (
+                    <div key={label} className="bg-black/20 rounded-xl p-4">
+                      <span className={`font-mono font-semibold text-sm ${color}`}>{label}</span>
+                      <p className="text-gray-400 text-sm mt-1">{desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* What it feels like */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">What It Feels Like To Use</h2>
+                <div className="space-y-5 text-gray-300 text-sm leading-relaxed">
+                  <div>
+                    <h3 className="text-rose-400 font-semibold mb-1">Power on</h3>
+                    <p>Flip the master switch. The 12V rail goes hot, the Pi boots, the round display lights up, and Raspotify announces &quot;Record Player&quot; on the network. Boot to ready takes about 30 seconds.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-rose-400 font-semibold mb-1">Pick something to play</h3>
+                    <p>Open Spotify on any device → tap Connect → choose Record Player. Or hit <code className="bg-white/10 px-2 py-0.5 rounded text-rose-300">http://rasp-bumpy:8080</code> on a phone or laptop to use the built-in UI.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-rose-400 font-semibold mb-1">Watch the platter</h3>
+                    <p>Album art appears on the 4&quot; round screen, sized to look like a real record label. Hit the motor switch and the whole platter — vinyl + display — starts spinning together at 33⅓ RPM. Tracks crossfade smoothly when they change.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-rose-400 font-semibold mb-1">Audio path</h3>
+                    <p>Bits leave the Pi over I²S → DAC HAT → RCA → studio monitors. No headphone-jack compromise; the DAC is the actual output stage.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Future */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-4">Next Iterations</h2>
+                <ul className="space-y-3 text-gray-300 text-sm leading-relaxed">
+                  <li>
+                    <strong className="text-rose-400">Physical volume knob:</strong> rotary encoder on GPIO mapped to the ALSA mixer — turn a knob, the music gets louder, no screen needed.
+                  </li>
+                  <li>
+                    <strong className="text-rose-400">Second screen for the control UI:</strong> add a 3.5&quot; rectangular HDMI display in kiosk mode so the player sits on the chassis itself instead of in a browser tab.
+                  </li>
+                  <li>
+                    <strong className="text-rose-400">Real vinyl crackle mix:</strong> spin a lathe-cut blank record and passively sum its preamp output with the DAC into the speakers, with a CRACKLE pot to control the blend. Authentic surface noise on top of any Spotify track.
+                  </li>
+                </ul>
               </div>
 
             </div>
